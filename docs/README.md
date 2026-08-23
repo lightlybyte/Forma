@@ -39,9 +39,9 @@ We require the version of Java that Minecraft requires, which is currently:
 
 **If you are on Windows and have difficulty using Java to launch JAR files, consider using [Jarfix by Johann Löfflmann][Jarfix].**
 
-# Creating Mods
+# Compiling Output
 
-[See the "Getting Started" section in the Forge/Forma/Fabric Documentation][Getting-Started].
+```C:\Users\light\OneDrive\Desktop\Forma\projects\forge\build\libs```
 
 # Contribute to Forma
 
