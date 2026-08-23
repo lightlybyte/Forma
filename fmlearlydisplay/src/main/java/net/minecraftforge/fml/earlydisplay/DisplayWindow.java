@@ -77,7 +77,7 @@ public class DisplayWindow implements ImmediateWindowProvider {
     private static final Logger LOGGER = LoggerFactory.getLogger("EARLYDISPLAY");
     private final AtomicBoolean animationTimerTrigger = new AtomicBoolean(true);
 
-    private ColourScheme colourScheme = ColourScheme.RED;
+    private ColourScheme colourScheme = ColourScheme.FORMA_BLUE;
     private ElementShader elementShader;
 
     private RenderElement.DisplayContext context;
