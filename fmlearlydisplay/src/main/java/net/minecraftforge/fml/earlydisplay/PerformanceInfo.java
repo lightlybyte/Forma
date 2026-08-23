@@ -38,9 +38,9 @@ public class PerformanceInfo {
         var cpuLoad = osBean.getProcessCpuLoad();
         String cpuText;
         if (cpuLoad == -1) {
-            cpuText = "*CPU: %.1f%%".formatted(osBean.getCpuLoad() * 100f);
+            cpuText = "*CPU (ALL CORES): %.1f%%".formatted(osBean.getCpuLoad() * 100f);
         } else {
-            cpuText = "CPU: %.1f%%".formatted(cpuLoad * 100f);
+            cpuText = "CPU (ALL CORES): %.1f%%".formatted(cpuLoad * 100f);
         }
 
         text = "Memory (RAM USED): %d/%dMB (%.1f%%)  %s".formatted(heapusage.getUsed() >>> 20, heapusage.getMax() >>> 20, memory * 100f, cpuText);
