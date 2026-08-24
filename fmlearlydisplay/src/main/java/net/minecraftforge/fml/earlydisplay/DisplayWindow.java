@@ -150,7 +150,7 @@ public class DisplayWindow implements ImmediateWindowProvider {
         this.maximized = parsed.has(maximizedopt) || FMLConfig.getBoolConfigValue(FMLConfig.ConfigValue.EARLY_WINDOW_MAXIMIZED);
 
         var forgeVersion = parsed.valueOf(forgeversionopt);
-        StartupNotificationManager.modLoaderConsumer().ifPresent(c->c.accept("Forge loading "+ forgeVersion));
+        StartupNotificationManager.modLoaderConsumer().ifPresent(c->c.accept("Forma loading "+ forgeVersion));
         performanceInfo = new PerformanceInfo();
         return start(parsed.valueOf(mcversionopt), forgeVersion);
     }
@@ -318,12 +318,12 @@ public class DisplayWindow implements ImmediateWindowProvider {
         LOGGER.error("ERROR DISPLAY\n"+msgBuilder);
         // we show the display on a new dedicated thread
         Executors.newSingleThreadExecutor().submit(()-> {
-            var res = TinyFileDialogs.tinyfd_messageBox("Minecraft: Forge", msgBuilder.toString(), "yesno", "error", false);
+            var res = TinyFileDialogs.tinyfd_messageBox("Minecraft: Forma", msgBuilder.toString(), "yesno", "error", false);
             if (res) {
                 try {
                     Desktop.getDesktop().browse(URI.create(ERROR_URL));
                 } catch (IOException ioe) {
-                    TinyFileDialogs.tinyfd_messageBox("Minecraft: Forge", "Sadly, we couldn't open your browser.\nVisit " + ERROR_URL, "ok", "error", false);
+                    TinyFileDialogs.tinyfd_messageBox("Minecraft: Forma", "Sadly, we couldn't open your browser.\nVisit " + ERROR_URL, "ok", "error", false);
                 }
             }
             System.exit(1);
@@ -411,7 +411,7 @@ public class DisplayWindow implements ImmediateWindowProvider {
                 A) Make sure Minecraft is set to prefer high performance graphics in the OS and/or driver control panel
                 B) Check for driver updates on the graphics brand's website
                 C) Try reinstalling your graphics drivers
-                D) If still not working after trying all of the above, ask for further help on the Forge forums or Discord
+                D) If still not working after trying all of the above, ask for further help on the Forma forums or Discord
                 
                 You can safely ignore this message if the game starts up successfully.""");
             }
