@@ -131,7 +131,7 @@ public class DisplayWindow implements ImmediateWindowProvider {
         FMLConfig.updateConfig(FMLConfig.ConfigValue.EARLY_WINDOW_HEIGHT, winHeight);
         fbScale = FMLConfig.getIntConfigValue(FMLConfig.ConfigValue.EARLY_WINDOW_FBSCALE);
         if (System.getenv("FML_EARLY_WINDOW_DARK")!= null) {
-            this.colourScheme = ColourScheme.BLACK;
+            this.colourScheme = ColourScheme.FORMA_BLUE;
         } else {
             try {
                 // check the options file for the colour scheme
@@ -139,12 +139,12 @@ public class DisplayWindow implements ImmediateWindowProvider {
                 var keyName = "darkMojangStudiosBackground:";
                 for (String line : optionLines) {
                     if (line.startsWith(keyName)) {
-                        this.colourScheme = line.startsWith("true", keyName.length()) ? ColourScheme.BLACK : ColourScheme.RED;
+                        this.colourScheme = line.startsWith("true", keyName.length()) ? ColourScheme.FORMA_BLUE : ColourScheme.FORMA_BLUE;
                         break;
                     }
                 }
             } catch (IOException e) {
-                this.colourScheme = ColourScheme.RED; // fallback to red colourScheme
+                this.colourScheme = ColourScheme.FORMA_BLUE; // fallback to red colourScheme
             }
         }
         this.maximized = parsed.has(maximizedopt) || FMLConfig.getBoolConfigValue(FMLConfig.ConfigValue.EARLY_WINDOW_MAXIMIZED);
